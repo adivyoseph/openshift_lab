@@ -8,4 +8,10 @@ run `$ cat .ssh/id_rsa.pub` highlight output and right click mouse `copy`, paste
 
 Clone the repo `$ git clone git@github.com:adivyoseph/openshift_lab.git`
 
-## 
+## env
+`enp39s0` motherboard GE port
+`wlo1` Wifi port on home Wifi LAN 192.168.2.x
+
+
+
+
