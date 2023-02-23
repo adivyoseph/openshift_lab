@@ -178,4 +178,28 @@ kubeadm join 192.168.2.159:6443 --token wgheve.jz8l70oc6pq2p7ww \
     ``
 
 
+## client
+kubeadm join 192.168.2.159:6443 --token wgheve.jz8l70oc6pq2p7ww \
+        --discovery-token-ca-cert-hash sha256:cd24c825f8e79064c37f24b96eccb7fcf29a1e141b85891857300c9e1ed43dfb
+[preflight] Running pre-flight checks
+error execution phase preflight: [preflight] Some fatal errors occurred:
+	[ERROR IsPrivilegedUser]: user is not running as root
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+To see the stack trace of this error execute with --v=5 or higher
+[martin@localhost-live k8_only]$ sudo kubeadm join 192.168.2.159:6443 --token wgheve.jz8l70oc6pq2p7ww \
+        --discovery-token-ca-cert-hash sha256:cd24c825f8e79064c37f24b96eccb7fcf29a1e141b85891857300c9e1ed43dfb
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+
 

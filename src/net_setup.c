@@ -65,6 +65,10 @@ int main( int argc, char** argv ) {
             printf("Eth  port_%d: %s\n", i, &g_systemInfo.ethPorts[i][0]);
         }
         //Todo add checks
+        // select eth of more than one
+        // 
+
+
 
 
     return 0;
