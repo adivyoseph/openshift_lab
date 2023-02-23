@@ -1,0 +1,82 @@
+[martin@localhost openshift_lab]$ kubectl describe node localhost-live
+Name:               localhost-live
+Roles:              worker1
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=localhost-live
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker1=w1
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/crio/crio.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Wed, 22 Feb 2023 23:18:01 -0500
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  localhost-live
+  AcquireTime:     <unset>
+  RenewTime:       Wed, 22 Feb 2023 23:48:50 -0500
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Wed, 22 Feb 2023 23:45:31 -0500   Wed, 22 Feb 2023 23:18:01 -0500   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Wed, 22 Feb 2023 23:45:31 -0500   Wed, 22 Feb 2023 23:18:01 -0500   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Wed, 22 Feb 2023 23:45:31 -0500   Wed, 22 Feb 2023 23:18:01 -0500   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Wed, 22 Feb 2023 23:45:31 -0500   Wed, 22 Feb 2023 23:18:11 -0500   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  10.10.1.2
+  Hostname:    localhost-live
+Capacity:
+  cpu:                24
+  ephemeral-storage:  6675409Mi
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             65762960Ki
+  pods:               110
+Allocatable:
+  cpu:                24
+  ephemeral-storage:  6299706290396
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             65660560Ki
+  pods:               110
+System Info:
+  Machine ID:                 0d757cb50e55428e8b3ce7119de19827
+  System UUID:                adeba9e2-8908-c617-a374-d8bbc13cb34e
+  Boot ID:                    ec92c126-945d-4af2-b370-48bcca8f341e
+  Kernel Version:             6.0.7-301.fc37.x86_64
+  OS Image:                   Fedora Linux 37 (Workstation Edition)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  cri-o://1.24.3
+  Kubelet Version:            v1.25.6
+  Kube-Proxy Version:         v1.25.6
+PodCIDR:                      10.85.1.0/24
+PodCIDRs:                     10.85.1.0/24
+Non-terminated Pods:          (1 in total)
+  Namespace                   Name                CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                ------------  ----------  ---------------  -------------  ---
+  kube-system                 kube-proxy-4mmz5    0 (0%)        0 (0%)      0 (0%)           0 (0%)         30m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests  Limits
+  --------           --------  ------
+  cpu                0 (0%)    0 (0%)
+  memory             0 (0%)    0 (0%)
+  ephemeral-storage  0 (0%)    0 (0%)
+  hugepages-1Gi      0 (0%)    0 (0%)
+  hugepages-2Mi      0 (0%)    0 (0%)
+Events:
+  Type    Reason                   Age                From             Message
+  ----    ------                   ----               ----             -------
+  Normal  Starting                 29m                kube-proxy       
+  Normal  Starting                 30m                kubelet          Starting kubelet.
+  Normal  NodeHasSufficientMemory  30m (x2 over 30m)  kubelet          Node localhost-live status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    30m (x2 over 30m)  kubelet          Node localhost-live status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     30m (x2 over 30m)  kubelet          Node localhost-live status is now: NodeHasSufficientPID
+  Normal  NodeAllocatableEnforced  30m                kubelet          Updated Node Allocatable limit across pods
+  Normal  RegisteredNode           30m                node-controller  Node localhost-live event: Registered Node localhost-live in Controller
+  Normal  NodeReady                30m                kubelet          Node localhost-live status is now: NodeReady
+[martin@localhost openshift_lab]$ 
+
