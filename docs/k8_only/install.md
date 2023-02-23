@@ -203,3 +203,19 @@ This node has joined the cluster:
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 
 
+
+``[martin@localhost openshift_lab]$ kubectl get nodes
+NAME                    STATUS   ROLES           AGE   VERSION
+localhost.localdomain   Ready    control-plane   28m   v1.25.6
+[martin@localhost openshift_lab]$ man vim
+[martin@localhost openshift_lab]$ kubectl get nodes
+NAME                    STATUS   ROLES           AGE    VERSION
+localhost-live          Ready    <none>          39s    v1.25.6
+localhost.localdomain   Ready    control-plane   3h4m   v1.25.6
+[martin@localhost openshift_lab]$ kubectl label node localhost-live node-role.kubernetes.io/worker1=w1
+node/localhost-live labeled
+[martin@localhost openshift_lab]$ kubectl get nodes
+NAME                    STATUS   ROLES           AGE     VERSION
+localhost-live          Ready    worker1         10m     v1.25.6
+localhost.localdomain   Ready    control-plane   3h14m   v1.25.6
+``
